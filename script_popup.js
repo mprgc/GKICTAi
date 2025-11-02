@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   const CURRENT_VERSION = "Version 1.0"; // <-- නව version එකක් දාන්න
-  const ACCESS_CODE = "GKICT@j5"; // <-- ඔබගේ නව code එක
+  const ACCESS_CODE = "GKICTeNj5"; // <-- ඔබගේ නව code එක
   const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScwdxdJOQCqtN4sL_YczCPymKoBzi3NDHFXrNuM080qSF5DrA/viewform?usp=sharing&ouid=114444653573004614970";
 
   const registeredOnce = localStorage.getItem("gkict_registered_once");
@@ -79,3 +79,4 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.removeItem('gkict_version');
       alert('✅ All GKICT registration data has been cleared!');
     }
+
