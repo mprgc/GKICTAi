@@ -73,10 +73,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
- function resetGKICTData() {
+ /*function resetGKICTData() {
       localStorage.removeItem('gkict_registered');
       localStorage.removeItem('gkict_registered_once');
       localStorage.removeItem('gkict_version');
       alert('✅ All GKICT registration data has been cleared!');
-    }
+    }*/
+
 
