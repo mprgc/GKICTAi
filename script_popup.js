@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: "Confirm",
         allowOutsideClick: false
       }).then((result) => {
-        if (result.value === "456") {
+        if (result.value === "3sf8GK@") {
           localStorage.setItem("gkict_registered", "true");
           Swal.fire("✅ Registration Complete!", "ඔබට දැන් Chatbot භාවිතා කළ හැක.", "success");
         } else {
           Swal.fire("❌ වැරදි Access Code එකක්!", "Access Denied.", "error");
-          setTimeout(function() {location.reload(); }, 1500);
+          setTimeout(function() {location.reload(); }, 1700);
           /*const formLink = "404.html";
           window.open(formLink, "_blank");*/
         }
@@ -41,3 +41,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
