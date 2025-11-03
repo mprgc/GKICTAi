@@ -44,7 +44,7 @@ body {
   max-width: 990px;
 }
 .container .app-header {
-  margin-top: 3vh;
+  margin-top: 0;
 }
 .app-header .heading {
   width: fit-content;
@@ -317,4 +317,20 @@ body.bot-responding .prompt-form #stop-response-btn {
   .prompt-wrapper.hide-controls :where(#theme-toggle-btn, #delete-chats-btn) {
     display: none;
   }
+
 }
+
+
+a.button {
+      display: inline‑block;
+      padding: 12px 24px;
+      margin: 200px 0;
+      font‑size: 18px;
+      color: #fff;
+      background: #007bff;
+      text-decoration: none;
+      border‑radius: 4px;
+    }
+    a.button:hover {
+      background: #0056b3;
+    }
