@@ -2,8 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  const CURRENT_VERSION = "Version 1.4"; // <-- නව version එකක් දාන්න
-  const ACCESS_CODE = "124"; // <-- ඔබගේ නව code එක
+  const CURRENT_VERSION = "Version 1.0"; // <-- නව version එකක් දාන්න
+  const ACCESS_CODE = "GKICTeY$5"; // <-- ඔබගේ නව code එක
   
   const registeredOnce = localStorage.getItem("gkict_registered_once");
   const savedVersion = localStorage.getItem("gkict_version");
@@ -45,6 +45,7 @@ function resetGKICTData() {
   localStorage.removeItem('gkict_version');
   alert('✅ All GKICT registration data has been cleared!');
 }
+
 
 
 
