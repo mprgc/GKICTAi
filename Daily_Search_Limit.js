@@ -4,7 +4,7 @@
 // ======================================
 
 // 🧩 Settings
-const DAILY_LIMIT = 4;
+const DAILY_LIMIT = 10;
 const STORAGE_KEY = "gkict_search_count";
 const DATE_KEY = "gkict_search_date";
 
@@ -124,3 +124,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
