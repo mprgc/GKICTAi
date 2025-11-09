@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  const CURRENT_VERSION = "Version 1.1"; // <-- නව version එකක් දාන්න
+  const CURRENT_VERSION = "Version 1.2"; // <-- නව version එකක් දාන්න
   const ACCESS_CODE = "GKICTeNj6"; // <-- ඔබගේ නව code එක
   
   const registeredOnce = localStorage.getItem("gkict_registered_once");
@@ -45,3 +45,4 @@ function resetGKICTData() {
   localStorage.removeItem('gkict_version');
   alert('✅ All GKICT registration data has been cleared!');
 }
+
