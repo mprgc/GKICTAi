@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Swal.fire({
       title: "📝 Register Before Using Chatbot",
-      html: "ඔබට GKICT AI Assistant භාවිතා කිරීමට පෙර Register විය යුතුය.<br><br>කරුණාකර ඔබගේ විස්තර Google Form එකේ පුරවන්න.",
+      html: "ඔබට GKICT AI Chatbot භාවිතා කිරීමට පෙර Register විය යුතුය.<br><br>කරුණාකර ඔබගේ විස්තර Google Form එකේ පුරවන්න.",
       icon: "info",
       confirmButtonText: "Go to Form",
       allowOutsideClick: false
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     Swal.fire({
       title: "🔑 Access Code Updated",
-      html: "GKICT AI Assistantහි security update එකක් සිදුවිය. කරුණාකර නව Access Code එක ඇතුළත් කරන්න.",
+      html: "Chatbot security update එකක් සිදුවිය. කරුණාකර නව Access Code එක ඇතුළත් කරන්න.",
       input: "text",
       inputPlaceholder: "Enter your new code (e.g. GKICT2025)",
       confirmButtonText: "Verify",
@@ -73,11 +73,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
- /*function resetGKICTData() {
+ function resetGKICTData() {
       localStorage.removeItem('gkict_registered');
       localStorage.removeItem('gkict_registered_once');
       localStorage.removeItem('gkict_version');
       alert('✅ All GKICT registration data has been cleared!');
-    }*/
-
-
+    }
