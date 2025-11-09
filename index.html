@@ -20,8 +20,8 @@
 	  <img src="logo.png" alt="" width="150" height="150">
         <h1 class="heading">Hello, I am GKICT Ai Assistant </h1>
         <h4 class="sub-heading">ආයුබෝවන් ! How can I help you today...?</h4>
-        <br>
-       </header>
+        
+      </header>
       <!-- Suggestions List -->
       <ul class="suggestions">
         <li class="suggestions-item">
@@ -44,12 +44,18 @@
       <!-- Chats -->
       <div class="chats-container"></div>
       <!-- Prompt Input -->
+
       <div class="prompt-container">
+
+      <!-- Limit කරන text එක  -->
+       <div id="daily-limit-display" class="daily-limit-text"></div>
+
         <div class="prompt-wrapper">
           <form action="#" class="prompt-form">
             <input type="text" placeholder="Ask me anything..." class="prompt-input" required />
             <div class="prompt-actions">
-              <!-- File Upload Wrapper -->
+
+            <!-- File Upload Wrapper -->
               <div class="file-upload-wrapper">
                 <img src="#" class="file-preview" />
                 <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
@@ -57,15 +63,26 @@
                 <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
                 <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
               </div>
+
+
+
               <!-- Send Prompt and Stop Response Buttons -->
               <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
               <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
             </div>
           </form>
+
+
+
           <!-- Theme and Delete Chats Buttons -->
           <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
           <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
         </div>
+
+      
+
+        <button id="reset-limit-btn" class="reset-btn" onclick="resetDailyLimit()" >Reset Daily Limit</button>
+
         <p class="disclaimer-text">Design by : Gayan Karunathilaka | GK ICT Junios | Software.GKICT Ai 2025 | Version 1.0 </p>
       </div>
     </div>
@@ -73,18 +90,12 @@
 
     <script src="script.js"></script>
     <script src="script_popup.js"></script>
+    <script src="Daily_Search_Limit.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
 </html>
-
-
-
-
-
-
-
 
 
 
