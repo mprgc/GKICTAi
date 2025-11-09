@@ -6,7 +6,7 @@ const fileInput = promptForm.querySelector("#file-input");
 const fileUploadWrapper = promptForm.querySelector(".file-upload-wrapper");
 const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 // API Setup
-const API_KEY = "AIzaSyCraGDW9w2Z5EgN4QGHk7b00nmwecQNQUM";
+const API_KEY = "AIzaSyDbqITHLeMX7XCenp5RGRV0CAlL_9_IfSk";
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyCraGDW9w2Z5EgN4QGHk7b00nmwecQNQUM`;
 let controller, typingInterval;
 const chatHistory = [];
@@ -58,6 +58,29 @@ const generateResponse = async (botMsgDiv) => {
       body: JSON.stringify({ contents: chatHistory }),
       signal: controller.signal,
     });
+
+
+function logUserMessage(message) {
+  fetch("https://script.google.com/macros/s/AKfycbwQwHGlHa4H6wCDVeUQn_EsOxKhGNkqKNfF0pWhgP0Tf8szBhN8GOUFLRX20shAjxTDCQ/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userMessage: message }),
+  });
+}
+
+// chatbot එකේ send button click event එකේදී:
+function handleUserInput() {
+  const message = document.getElementById("userInput").value;
+  if (message.trim() !== "") {
+    logUserMessage(message); // 👈 මෙතනින් log වෙනවා
+    sendMessageToChatbot(message);
+  }
+}
+
+
+
+
+    
     const data = await response.json();
     if (!response.ok) throw new Error(data.error.message);
     // Process the response text and display with typing effect
