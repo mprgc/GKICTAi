@@ -334,3 +334,12 @@ a.button {
     a.button:hover {
       background: #0056b3;
     }
+
+.daily-limit-text{
+  margin-left: 50px;
+}
+
+.suggestions-item.disabled {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
