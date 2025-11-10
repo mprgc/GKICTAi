@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const savedVersion = localStorage.getItem("gkict_version");
 
  // Ai මතම නොරැදෙන්න
- Swal.fire("🧠 Ai මතම නොරැදෙන්න 🤔", "Ai මතම නොරැදෙන්න මෙයින් ලැබුණු විස්තර “සටහන්” ලෙස භාවිතා කර <b> ඔබේම නිර්මාණාත්මක වාක්‍ය රටාවකින් ලියන්න. ඒවා නැවත නැවත පාඩම් කරගන්න. </b>  Ai සමඟින් නිර්මාණාත්මකව සිතන්න අලුත් දේවල් ඉගෙනගන්න එය ඔබගේ වගකීමයි.");
+ Swal.fire("🧠 Ai මතම නොරැදෙන්න 🤔", "Ai මඟින් ලැබුණු විස්තර “සටහන්” ලෙස භාවිතා කර <b> ඔබේම නිර්මාණාත්මක වාක්‍ය රටාවකින් ලියන්න. ඒවා නැවත නැවත පාඩම් කරගන්න. </b>  Ai සමඟින් නිර්මාණාත්මකව සිතන්න අලුත් දේවල් ඉගෙනගන්න එය ඔබගේ වගකීමයි.");
 
 
   // version mismatch නම් access recheck කරන්න
@@ -52,3 +52,4 @@ function resetGKICTData() {
   localStorage.removeItem('gkict_version');
   alert('✅ All GKICT registration data has been cleared!');
 }
+
