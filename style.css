@@ -337,9 +337,12 @@ a.button {
 
 .daily-limit-text{
   margin-left: 50px;
+  font-size: 12px;
+  text-align: left;
 }
 
 .suggestions-item.disabled {
   cursor: not-allowed;
   filter: grayscale(100%);
 }
+
