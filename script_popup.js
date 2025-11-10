@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
-  const CURRENT_VERSION = "Version 1.2"; // <-- නව version එකක් දාන්න
+  const CURRENT_VERSION = "Version 1.0"; // <-- නව version එකක් දාන්න
   const ACCESS_CODE = "GKICTeY$5"; // <-- ඔබගේ නව code එක
   /*const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLScwdxdJOQCqtN4sL_YczCPymKoBzi3NDHFXrNuM080qSF5DrA/viewform?usp=sharing&ouid=114444653573004614970";*/
 
