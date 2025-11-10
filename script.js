@@ -7,7 +7,7 @@ const fileUploadWrapper = promptForm.querySelector(".file-upload-wrapper");
 const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 // API Setup
 const API_KEY = "AIzaSyDbqITHLeMX7XCenp5RGRV0CAlL_9_IfSk";
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyCraGDW9w2Z5EgN4QGHk7b00nmwecQNQUM`;
+const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyDbqITHLeMX7XCenp5RGRV0CAlL_9_IfSk`;
 let controller, typingInterval;
 const chatHistory = [];
 const userData = { message: "", file: {} };
@@ -181,3 +181,4 @@ document.addEventListener("click", ({ target }) => {
 // Add event listeners for form submission and file input click
 promptForm.addEventListener("submit", handleFormSubmit);
 promptForm.querySelector("#add-file-btn").addEventListener("click", () => fileInput.click());
+
