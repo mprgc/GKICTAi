@@ -7,7 +7,7 @@ const fileUploadWrapper = promptForm.querySelector(".file-upload-wrapper");
 const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 
 // API Setup
-//const API_KEY = "AIzaSyDbqITHLeMX7XCenp5RGRV0CAlL_9_IfSk";
+
 const API_URL = `https://script.google.com/macros/s/AKfycbxCmzE0piIj8ttK3gGuNNu2y6JOA091zmE7D4_PNrBUpc2xl87Mo2-pUZaWKvGo-7lN/exec`;
 
 let controller, typingInterval;
@@ -183,5 +183,6 @@ document.addEventListener("click", ({ target }) => {
 // Add event listeners for form submission and file input click
 promptForm.addEventListener("submit", handleFormSubmit);
 promptForm.querySelector("#add-file-btn").addEventListener("click", () => fileInput.click());
+
 
 
