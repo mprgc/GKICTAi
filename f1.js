@@ -13,9 +13,10 @@
   function getValue(e) {
 
 
-    const apiKey = "AIzaSyDbqITHLeMX7XCenp5RGRV0CAlL_9_IfSk";
+    const apiKey = "AIzaSyAhKTxvEa1fDts4oD4bCfdQnEDgKJ_IM_4";
     var apiUrl = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" + apiKey; // ← මෙය ඔබට වෙනස් කරන්න
 
   
   return apiUrl;
 }
+
