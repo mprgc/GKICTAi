@@ -13,10 +13,11 @@
   function getValue(e) {
 
 
-    const apiKey = "AIzaSyAhKTxvEa1fDts4oD4bCfdQnEDgKJ_IM_4";
+    const apiKey = "123";
     var apiUrl = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" + apiKey; // ← මෙය ඔබට වෙනස් කරන්න
 
   
   return apiUrl;
 }
+
 
