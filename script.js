@@ -9,8 +9,9 @@ const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 // API Setup
 
 
-console.log(getValue());
-const API_URL = getValue();
+/*console.log(getValue());*/
+const apiKey = "AIzaSyAk6Ctz6KQAAoGk-MqSZ_XAyVQ1PNAV828";
+const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" + apiKey;
 
 
 let controller, typingInterval;
@@ -186,3 +187,4 @@ document.addEventListener("click", ({ target }) => {
 // Add event listeners for form submission and file input click
 promptForm.addEventListener("submit", handleFormSubmit);
 promptForm.querySelector("#add-file-btn").addEventListener("click", () => fileInput.click());
+
