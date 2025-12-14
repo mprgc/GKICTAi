@@ -8,10 +8,12 @@ const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 
 // API Setup
 
+//const apiKey = "AIz...";
+    var apiUrl = "https://us-central1-gkictai.cloudfunctions.net/chat";
 
-/*console.log(getValue());*/
-const apiKey = "AIzaSyAk6Ctz6KQAAoGk-MqSZ_XAyVQ1PNAV828";
-const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" + apiKey;
+
+console.log(getValue());
+const API_URL = getValue();
 
 
 let controller, typingInterval;
@@ -47,27 +49,35 @@ const typingEffect = (text, textElement, botMsgDiv) => {
     }
   }, 40); // 40 ms delay
 };
+
 // Make the API call and generate the bot's response
 const generateResponse = async (botMsgDiv) => {
   const textElement = botMsgDiv.querySelector(".message-text");
   controller = new AbortController();
-  // Add user message and file data to the chat history
+  
+  // Add user message to the chat history
+  // NOTE: We only push the text part, as the secure Firebase Function currently handles only text.
   chatHistory.push({
     role: "user",
-    parts: [{ text: userData.message }, ...(userData.file.data ? [{ inline_data: (({ fileName, isImage, ...rest }) => rest)(userData.file) }] : [])],
+    parts: [{ text: userData.message }]
   });
+  
+  // The Firebase function expects only the prompt text in the body.
+  const userPromptForServer = userData.message;
+  
   try {
-    // Send the chat history to the API to get a response
+    // Send the user prompt to the secure Firebase Function endpoint (API_URL)
     const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: chatHistory }),
+      // Send the prompt string in the format the Firebase Function expects: { "prompt": "..." }
+      body: JSON.stringify({ prompt: userPromptForServer }), 
       signal: controller.signal,
     });
 
 
 function logUserMessage(message) {
-  fetch("https://script.google.com/macros/s/AKfycbwQwHGlHa4H6wCDVeUQn_EsOxKhGNkqKNfF0pWhgP0Tf8szBhN8GOUFLRX20shAjxTDCQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwQwHGlHa4H6wCDVeUQn_EsOxKhGNkqKNfF0pWhgP0Tf8szBh8GOUFLRX20shAjxTDCQ/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userMessage: message }),
@@ -82,7 +92,27 @@ function handleUserInput() {
     sendMessageToChatbot(message);
   }
 }
-
+    
+    const data = await response.json();
+    
+    // Check for network errors or errors returned in the Firebase function's JSON response
+    if (!response.ok || data.error) throw new Error(data.error || `Server Error: ${response.status}`);
+    
+    // Process the response text from the Firebase Function's 'response' field (data.response)
+    const responseText = data.response.replace(/\*\*([^*]+)\*\*/g, "$1").trim();
+    
+    typingEffect(responseText, textElement, botMsgDiv);
+    chatHistory.push({ role: "model", parts: [{ text: responseText }] });
+  } catch (error) {
+    textElement.textContent = error.name === "AbortError" ? "Response generation stopped." : error.message;
+    textElement.style.color = "#d62939";
+    botMsgDiv.classList.remove("loading");
+    document.body.classList.remove("bot-responding");
+    scrollToBottom();
+  } finally {
+    userData.file = {};
+  }
+};
 
 
 
@@ -187,4 +217,3 @@ document.addEventListener("click", ({ target }) => {
 // Add event listeners for form submission and file input click
 promptForm.addEventListener("submit", handleFormSubmit);
 promptForm.querySelector("#add-file-btn").addEventListener("click", () => fileInput.click());
-
